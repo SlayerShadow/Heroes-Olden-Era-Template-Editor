@@ -1,0 +1,52 @@
+{
+  "jsonEditor": {
+    "aria": "JSON draft",
+    "apply": "Apply",
+    "applyTitle": "Apply changes (Ctrl+Enter)",
+    "reset": "Reset",
+    "resetTitle": "Revert the text to the current state",
+    "dirty": "changes not applied",
+    "errors": {
+      "syntax": "JSON syntax error: {{detail}}",
+      "notObject": "Expected a JSON object {…}",
+      "zoneNameMissing": "Missing required field name (non-empty string)",
+      "zoneNameTaken": "The name “{{detail}}” is already taken by another zone of the variant",
+      "connEndpointsMissing": "Missing required fields from/to (non-empty strings)",
+      "connTypeMissing": "Missing required field connectionType",
+      "connNotFound": "Connection “{{detail}}” not found in the active variant",
+      "rootNameMissing": "Missing required field name (non-empty string)",
+      "rootVariantsMismatch": "variants[] must be present and contain exactly {{detail}} item(s) — zones and connections cannot be added or removed through this section"
+    }
+  },
+  "fields": {
+    "badgeBroken": "known broken reference (stock)",
+    "badgeMissing": "not in catalog",
+    "badgeOk": "in catalog",
+    "comboNoMatches": "No matches",
+    "notSet": "not set",
+    "requiredTitle": "Required field: present in all layouts of all 60 stock templates. If left empty, the validator emits a warning"
+  },
+  "mcRules": {
+    "rule": "rule {{n}}",
+    "deleteTitle": "Delete rule",
+    "typeLabel": "Rule type",
+    "types": {
+      "Road": "road",
+      "MainObject": "zone object",
+      "Crossroads": "crossroads",
+      "Sid": "another object",
+      "Connection": "connection"
+    },
+    "argsLabel": "Arguments",
+    "argsHint": "index/name/sid/connection",
+    "targetMinLabel": "Min target",
+    "targetMinHint": "targetMin — 0–0.9",
+    "targetMaxLabel": "Max target",
+    "targetMaxHint": "targetMax — 0–2",
+    "weightLabel": "Weight",
+    "weightHint": "weight — 0–10",
+    "targetLabel": "Target (point)",
+    "targetHint": "target — point distance (rare)",
+    "add": "rule"
+  }
+}

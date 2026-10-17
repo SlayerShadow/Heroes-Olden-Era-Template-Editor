@@ -1,0 +1,8 @@
+{
+  "error": {
+    "title": "The editor crashed while rendering",
+    "hint": "The template is not lost: the editor keeps an emergency session snapshot and will restore the last state after a reload. If the error persists — send the diagnostics below to the developers.",
+    "details": "Component stack (for the report)",
+    "reload": "Reload the page"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "manual": {
+    "title": "Editor manual",
+    "hint": "F1 — open · Esc — close · click a screenshot — full window",
+    "close": "Close",
+    "closeTitle": "Close the manual (Esc)",
+    "navTitle": "Contents",
+    "navToggleTitle": "Expand/collapse section",
+    "searchPlaceholder": "Search the manual…",
+    "searchClearTitle": "Clear search",
+    "noResults": "Nothing found",
+    "chapterMissingTitle": "Chapter not written yet",
+    "imageMissing": "Screenshot will appear later",
+    "imageZoomTitle": "Open full-window",
+    "lightboxTitle": "Full-window screenshot",
+    "lightboxClose": "Close screenshot",
+    "lightboxCloseTitle": "Close (Esc or click the background)",
+    "empty": "No manual chapters found"
+  },
+  "pick": {
+    "ariaLabel": "Select a template from the folder",
+    "title": "Templates in “{{dirName}}”",
+    "searchPlaceholder": "Search by name…",
+    "close": "Close",
+    "empty": "Nothing found.",
+    "variantsCount_one": "{{count}} variant",
+    "variantsCount_other": "{{count}} variants",
+    "zonesCount_one": "{{count}} zone",
+    "zonesCount_other": "{{count}} zones",
+    "hint": "Select a template to open — or cancel (Esc).",
+    "cancel": "Cancel"
+  },
+  "preview": {
+    "title": "Preview · {{label}}",
+    "saved": "Saved “{{rootName}}/{{fileName}}”",
+    "saveFailed": "Could not write “{{fileName}}”",
+    "regenerateTitle": "Redraw from the current template state",
+    "refresh": "Refresh",
+    "close": "Close",
+    "alt": "Template preview",
+    "fileKey": "file",
+    "hint": "Minimap of the active variant: zone colors — player/wealth, lines — connection type (same as on the canvas).",
+    "empty": "Could not build the preview.",
+    "downloadTitle": "Download the PNG to the browser’s downloads folder",
+    "download": "Download",
+    "saveTitle": "Write {{file}} to “{{rootName}}” next to the template",
+    "pickFolderFirst": "First select the template folder (the “Open folder” button at the top)",
+    "saveToFolder": "Save to the template folder",
+    "downloadPng": "Download PNG"
+  },
+  "confirm": {
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "deleteHint": "The action can be undone with Ctrl+Z",
+    "discardTitle": "Unsaved changes",
+    "discardMessage": "All unsaved changes will be lost! Continue?",
+    "discardConfirm": "Continue"
+  }
+}

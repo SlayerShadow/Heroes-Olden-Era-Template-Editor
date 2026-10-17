@@ -1,0 +1,164 @@
+{
+  "mcPoint": {
+    "elementFallback": "element {{n}}",
+    "groupPart": "group “{{name}}”"
+  },
+  "graph": {
+    "modes": {
+      "overview": {
+        "label": "Overview",
+        "hint": "Players · wealth · key fields"
+      },
+      "budget": {
+        "label": "Budgets",
+        "hint": "guarded / unguarded / resources (guardedContentValue · unguardedContentValue · resourcesValue; abs · PerArea)"
+      },
+      "guard": {
+        "label": "Guards",
+        "hint": "guardMultiplier · connection guardValue · guardMatchGroup"
+      },
+      "biome": {
+        "label": "Biomes",
+        "hint": "zoneBiome / contentBiome / metaObjectsBiome"
+      },
+      "road": {
+        "label": "Roads",
+        "hint": "connection road flags · zone.roads routes · layout · crossroads"
+      },
+      "mandatory": {
+        "label": "Content",
+        "hint": "mandatoryContent: object points · placement rules (targetMin/Max as a ring)"
+      }
+    },
+    "metrics": {
+      "total": {
+        "label": "Σ total",
+        "title": "Sum: guardedContentValue + unguardedContentValue + resourcesValue"
+      },
+      "guarded": {
+        "label": "guarded",
+        "title": "guardedContentValue / guardedContentValuePerArea"
+      },
+      "unguarded": {
+        "label": "unguarded",
+        "title": "unguardedContentValue / unguardedContentValuePerArea"
+      },
+      "resources": {
+        "label": "resources",
+        "title": "resourcesValue / resourcesValuePerArea"
+      }
+    },
+    "target": {
+      "abs": "abs",
+      "perArea": "per tile"
+    },
+    "biomeLayer": "biome layer",
+    "metric": "metric",
+    "zones_one": "{{count}} zone",
+    "zones_other": "{{count}} zones",
+    "connections_one": "{{count}} connection",
+    "connections_other": "{{count}} connections",
+    "addZone": "+ zone",
+    "addZoneTitle": "Add a zone to the active variant",
+    "ctx": {
+      "createZone": "Create zone",
+      "duplicateZone": "Duplicate zone",
+      "deleteZone": "Delete zone",
+      "duplicateConnection": "Duplicate connection",
+      "deleteConnection": "Delete connection"
+    },
+    "hint": "Drag from a zone’s right edge onto another zone — a new connection; dragging again between the same pair adds another parallel one. Backspace / Delete removes the selection (with confirmation). Keys 1–6 — canvas modes. Right-click — canvas / zone / connection menu.",
+    "confirmDelete": {
+      "title": "Delete from canvas",
+      "zone": "You are about to delete zone “{{zone}}”. Are you sure?",
+      "zoneWithConnections": "You are about to delete zone “{{zone}}” together with its connections ({{connections}}). Are you sure?",
+      "connection": "You are about to delete the connection between zones “{{from}}” and “{{to}}”. Are you sure?",
+      "multiple": "You are about to delete {{items}}. Are you sure?"
+    }
+  },
+  "zoneNode": {
+    "selector": {
+      "MatchMainObject": "after object",
+      "FromList": "from list",
+      "MatchZone": "like zone"
+    },
+    "multi": "list",
+    "any": "any",
+    "upTo": "up to {{value}}",
+    "diplomacy": "diplo {{value}}",
+    "guardMultiplierTitle": "guardMultiplier — zone guard strength multiplier",
+    "guardWeeklyTitle": "guardWeeklyIncrement — weekly guard increment",
+    "guardCutoffTitle": "guardCutoffValue — guard strength cutoff",
+    "guardRandomTitle": "guardRandomization — guard strength spread",
+    "diplomacyTitle": "diplomacyModifier — diplomacy modifier",
+    "noSelector": "no selector",
+    "none": "none",
+    "connector": "connector",
+    "budgetTitle": "total zone budget",
+    "mcGroupsTitle": "mandatoryContent groups",
+    "mcTotalTitle": "sum of group items",
+    "mcTotal": "{{n}} items"
+  },
+  "edge": {
+    "road": "road",
+    "noRoad": "no road"
+  },
+  "legend": {
+    "title": "Mode: {{mode}}",
+    "mode": {
+      "overview": "Overview",
+      "budget": "Budgets",
+      "guard": "Guards",
+      "biome": "Biomes",
+      "road": "Roads",
+      "mandatory": "Mandatory content"
+    },
+    "players": "Players (Spawn)",
+    "connections": "Connections",
+    "wealth": "Zone wealth (budget)",
+    "budgetItems": "Budget components",
+    "budgetNodesHint": "On each node: G · U · R in 12k format",
+    "guardedValue": "guardedContentValue — guarded content",
+    "unguardedValue": "unguardedContentValue — unguarded",
+    "resourcesValue": "resourcesValue — resources",
+    "budgetSwitchHint": "Switch abs / per tile (PerArea) on the canvas panel.",
+    "guards": "Guards",
+    "guardMultiplier": "guardMultiplier — node guard strength multiplier",
+    "guardSmall": "small guard",
+    "guardLarge": "large guard",
+    "guardColorHint": "Connection color — by guardValue: orange weak → green mighty.",
+    "guardNegative": "negative guardValue (−10000…−2000)",
+    "guardMatchGroup": "guardMatchGroup — synchronized guard",
+    "biomes": "Biomes",
+    "activeLayer": "Active layer: {{layer}}",
+    "matchZoneSym": "← zone",
+    "matchZoneDesc": "MatchZone — same as a zone",
+    "matchObjectDesc": "MatchMainObject — same as the object",
+    "diffFromSym": "≠ zone",
+    "diffFromDesc": "differentFrom — not like a zone",
+    "anySym": "any",
+    "anyDesc": "FromList [] — no restrictions",
+    "multiSym": "list",
+    "multiDesc": "several biomes from the list",
+    "roadsConn": "Connection roads",
+    "roadTrue": "road: true — has a road",
+    "roadFalse": "road: false — no road",
+    "roadUnset": "road — not set",
+    "roadInZone": "Inside the zone",
+    "stoneRoad": "Stone — stone road",
+    "dirtRoad": "Dirt — dirt road",
+    "routeEnds": "route ends: object · connection · crossroads · content",
+    "crossroads": "crossroadsPosition — point where roads meet",
+    "layoutRow": "zone’s zoneLayout",
+    "mcPoints": "Mandatory content points",
+    "mcItem": "mandatoryContent item (name_* / sid); hover — rules",
+    "mcMainObject": "MainObject — ring around the zone object",
+    "mcCrossroads": "Crossroads — around the crossroads (zone center)",
+    "mcConnection": "Connection — around the connection (edge toward the neighbor)",
+    "mcSid": "Sid — around another object (name/sid)",
+    "mcRoad": "Road — a road (generated; dashed ring)",
+    "mcRings": "Rule rings",
+    "mcRingHint": "targetMin–targetMax — fraction of the zone radius around the target; dashed — target not found/unknown.",
+    "mcMineHint": "Rectangle around the point — isMine (mine)."
+  }
+}

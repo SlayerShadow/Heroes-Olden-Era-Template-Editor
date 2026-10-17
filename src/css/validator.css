@@ -1,0 +1,183 @@
+/* ------- Валидатор -------
+   Чипы в футере, список проблем (.issue), вкладки футера (ValidatorPanel.tsx, App.tsx). */
+
+/* ------- Validator ------- */
+
+.validator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.validator__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1;
+  padding: 3px 7px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  cursor: default;
+  min-width: 26px;
+  justify-content: center;
+}
+
+.validator__chip--error {
+  color: var(--warn);
+}
+
+.validator__chip--warning {
+  color: #ffca7a;
+}
+
+.validator__chip--info {
+  color: #7fc3ff;
+}
+
+.validator__chip.is-muted {
+  opacity: 0.3;
+}
+
+.validator__ok {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #7ecb8c;
+  font-size: 11px;
+}
+
+.validator__details {
+  position: relative;
+}
+
+.validator__details summary {
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 11px;
+  user-select: none;
+  white-space: nowrap;
+  list-style: none;
+}
+
+.validator__details summary:hover {
+  color: var(--text);
+}
+
+.validator__body {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  max-height: 340px;
+  width: 560px;
+  overflow: auto;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 8px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.55);
+  z-index: 60;
+}
+
+.issue {
+  display: grid;
+  grid-template-columns: 16px auto 1fr auto;
+  align-items: baseline;
+  gap: 6px;
+  padding: 3px 2px;
+  font-size: 11px;
+  border-bottom: 1px dashed var(--border);
+  width: 100%;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: inherit;
+  font-family: inherit;
+  text-align: left;
+}
+
+.issue--jumpable {
+  cursor: pointer;
+}
+
+.issue--jumpable:hover {
+  background: var(--bg-3);
+  border-radius: 4px;
+}
+
+.issue.is-root {
+  cursor: default;
+}
+
+.issue.is-root:hover {
+  background: none;
+}
+
+.issue:last-child {
+  border-bottom: none;
+}
+
+.issue__icon {
+  display: inline-flex;
+  align-self: center;
+}
+
+.issue__icon--error {
+  color: var(--warn);
+}
+
+.issue__icon--warning {
+  color: #ffca7a;
+}
+
+.issue__icon--info {
+  color: #7fc3ff;
+}
+
+.issue__scope {
+  color: var(--text-dim);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.issue__msg {
+  color: var(--text);
+}
+
+.issue__path {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* --- footer tabs (issues | compare) --- */
+
+.footer-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-tab {
+  font-size: 11px;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.footer-tab:hover {
+  background: var(--bg-3);
+}
+
+.footer-tab.is-on {
+  background: var(--bg-3);
+  color: var(--text);
+}

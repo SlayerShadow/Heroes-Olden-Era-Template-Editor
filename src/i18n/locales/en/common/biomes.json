@@ -1,0 +1,16 @@
+{
+  "biomes": {
+    "Grass": "Grass",
+    "Sand": "Sand",
+    "Snow": "Snow",
+    "Dirt": "Dirt",
+    "Deathland": "Deathland",
+    "Autumn": "Autumn",
+    "Lava": "Lava",
+    "layers": {
+      "zone": "surface",
+      "content": "content",
+      "meta": "decor"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "locale": {
+    "selectLabel": "Interface language"
+  },
+  "fs": {
+    "fileTypeDescription": "RMG templates (can be selected together with .editor.json)",
+    "fallbackDirName": "Templates",
+    "notJsonObject": "The file is not a JSON object",
+    "notTemplate": "The file does not look like .rmg.json: no name / variants[]",
+    "pickerOpenError": "Could not open the file picker"
+  },
+  "app": {
+    "brand": "OE · Template Editor",
+    "new": "New",
+    "newTitle": "Create a template from scratch",
+    "openFile": "Open file",
+    "openFolder": "Open folder",
+    "undoTitle": "Undo (Ctrl+Z)",
+    "redoTitle": "Redo (Ctrl+Shift+Z / Ctrl+Y)",
+    "preview": "Preview",
+    "previewTitle": "Minimap of the active variant → PNG preview",
+    "save": "Save",
+    "saveTitleFolder": "Save to “{{folder}}” (+ PNG preview)",
+    "saveTitleNoFolder": "No folder selected — download .rmg.json + .editor.json + PNG preview",
+    "saveTitlePickFolder": "Pick a folder and save .rmg.json + .editor.json + PNG preview",
+    "saveBlockedJson": "Saving is blocked: the JSON editor has an unfixed error",
+    "variantLabel": "Variant",
+    "variantOption": "V{{index}} · {{zones}} zones",
+    "variantCopyTitle": "Duplicate the active variant",
+    "variantDeleteTitle": "Delete the active variant",
+    "alertNoTemplates": "No .rmg.json files found in the selected folder.",
+    "alertSaveTemplateFail": "Could not write {{base}}.rmg.json",
+    "alertSavePreviewFail": "Could not write {{base}}.png — preview not saved",
+    "alertSavedFolder": "Files saved to the “{{folder}}” folder",
+    "hintPairInFolder": "The open “{{folder}}” folder contains a companion file “{{sidecar}}”. Open the template together with it — node positions, notes and section layout will be restored.",
+    "hintPairMissing": "The template was opened without its companion .editor.json file: nodes were placed on a ring. If the template has its pair next to it — select both files when opening.",
+    "savedToFolderTitle": "Saved to the “{{folder}}” folder",
+    "savedToDownloadTitle": "Downloaded to the browser’s downloads folder",
+    "resizerLeftAria": "Left panel width",
+    "resizerLeftTitle": "Drag to resize the left panel (double-click to reset)",
+    "resizerRightAria": "Right panel width",
+    "resizerRightTitle": "Drag to resize the Inspector (double-click to reset)",
+    "footerHint": "Zone graph canvas · node positions live in .editor.json (sidecar). Without Chrome/Edge: files/folders open via file selection, saving falls back to download.",
+    "footerTabIssues": "Issues",
+    "footerTabCompare": "Compare",
+    "docs": "Documentation",
+    "docsTitle": "Editor manual (F1)",
+    "autosaveFailed": "Could not save the session backup: browser storage is unavailable or full. Save the template to disk manually."
+  },
+  "store": {
+    "newTemplateName": "New Template",
+    "sessionRestoredAt": "Previous session restored (as of {{time}}).",
+    "sessionRestored": "Previous session restored."
+  },
+  "toasts": {
+    "region": "Notifications",
+    "dismiss": "Dismiss notification"
+  }
+}

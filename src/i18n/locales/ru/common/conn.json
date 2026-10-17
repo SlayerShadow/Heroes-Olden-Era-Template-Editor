@@ -1,0 +1,51 @@
+{
+  "conn": {
+    "sectionMain": "Связь",
+    "nameLabel": "Имя связи",
+    "namePlaceholder": "Авто: From-To",
+    "nameHint": "name — на него ссылаются дороги и placementArgs",
+    "fromLabel": "Зона-источник",
+    "toLabel": "Зона-приёмник",
+    "connectionTypeLabel": "Тип связи",
+    "connectionTypeHint": "connectionType — Direct: прямой коридор; Default: форму выбирает генератор; Portal: портал (пара врат); Proximity: зоны просто рядом (length задаёт расстояние); GladiatorArena: вход на арену",
+    "connTypes": {
+      "Direct": "прямой коридор (Direct)",
+      "Default": "обычная связь (Default)",
+      "Portal": "портал (Portal)",
+      "Proximity": "зоны рядом (Proximity)",
+      "GladiatorArena": "вход на арену (GladiatorArena)"
+    },
+    "sectionGuard": "Стража",
+    "guardValueLabel": "Сила стражи",
+    "guardValueHint": "guardValue — −10000…5 000 000; отрицательные (−10000…−2000) встречаются на второстепенных проходах — семантика не выяснена, экспериментально",
+    "guardWeeklyLabel": "Еженедельный прирост стражи",
+    "guardWeeklyHint": "guardWeeklyIncrement — 0.05–0.25; доля, на которую стража растёт каждую неделю",
+    "guardRandomLabel": "Разброс силы стражи",
+    "guardRandomHint": "guardRandomization — 11 файлов, 0.1–0.25",
+    "guardZoneLabel": "Зона стражи",
+    "guardZoneHint": "guardZone — из какой зоны берётся стража (по умолчанию — посередине)",
+    "guardGroupLabel": "Группа синхронной стражи",
+    "guardGroupHint": "guardMatchGroup — именованная группа симметричных стражей (в группе должны совпадать guardValue/guardWeeklyIncrement/guardRandomization)",
+    "guardEscapeLabel": "Страже разрешено уйти",
+    "guardEscapeHint": "guardEscape — гипотеза: разрешить страже уйти (обход стражи)? В штатных всегда false; поведение при true неизвестно",
+    "sectionRoad": "Дорога и симуляция",
+    "roadLabel": "Дорога по связи",
+    "roadHint": "road — есть ли дорога по связи",
+    "simTurnSquadLabel": "Отряд синхронного хода",
+    "simTurnSquadHint": "simTurnSquad — гипотеза: страж учитывается в одновременных ходах. В штатных всегда true (48 файлов)",
+    "lengthLabel": "Дистанция",
+    "lengthHint": "length — расстояние для «зоны рядом» (Proximity)",
+    "sectionGate": "Врата портала",
+    "gatePlacementLabel": "Размещение врат",
+    "gatePlacementHint": "gatePlacement — Center: общие врата в центре (штатно); NearZone: врата в указанной зоне",
+    "gatePlacements": {
+      "Center": "в центре зоны (Center)",
+      "NearZone": "возле указанной зоны (NearZone)"
+    },
+    "gatePlacementArgsLabel": "Зона врат",
+    "gatePlacementArgsHint": "gatePlacementArgs — зона размещения врат (при NearZone)",
+    "sectionPortalRules": "Побег врат (portalPlacementRules)",
+    "rulesFromLabel": "portalPlacementRulesFrom[] — куда ведут врата (Crossroads/MainObject)",
+    "rulesToLabel": "portalPlacementRulesTo[] — точки входа врат (Crossroads/MainObject)"
+  }
+}

@@ -1,0 +1,246 @@
+/* ------- Каркас приложения -------
+   Шапка, футер, рабочая область, боковые колонки, ресайзеры (App.tsx, LocaleSelect.tsx). */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 960px;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 14px;
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+
+.app__brand {
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.app__template {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: auto;
+  min-width: 0;
+}
+
+.app__actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app__name {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app__source {
+  font-size: 11px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.app__source--ok {
+  color: #7ecb8c;
+}
+
+.app__badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text-dim);
+}
+
+.app__variant {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app__variant label {
+  color: var(--text-dim);
+  font-size: 12px;
+}
+
+.app__variant select {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.app__locale {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+}
+
+.app__locale select {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.app__workspace {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.app__sidebar {
+  width: var(--sb-left, 200px);
+  border-right: 1px solid var(--border);
+  background: var(--bg-2);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__canvas {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.app__inspector {
+  width: var(--sb-right, 320px);
+  border-left: 1px solid var(--border);
+  background: var(--bg-2);
+  overflow-y: auto;
+  flex-shrink: 0;
+  /* Контейнер размеров: колонки формовых сеток инспектора (.editor__grid,
+     .mo__grid, .mc-rule — @container в rootpanels.css) реагируют на ширину
+     панели, а не окна (панель тянется ресайзером независимо от окна). */
+  container-type: inline-size;
+}
+
+/* ------- Resizers (перетаскиваемая ширина боковых панелей) ------- */
+
+.resizer {
+  flex-shrink: 0;
+  width: 7px;
+  background: var(--bg-2);
+  cursor: col-resize;
+  border: none;
+  padding: 0;
+}
+
+.resizer:hover,
+.resizer.is-on {
+  background: rgba(98, 168, 242, 0.35);
+}
+
+body.is-resizing {
+  cursor: col-resize;
+  user-select: none;
+}
+
+.app__footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text-dim);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.app__footer-hint {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ============ ErrorBoundary: экран краша рендера ============
+   Заменяет всё дерево приложения: полноэкранный оверлей с карточкой
+   диагностики. Контраст текста >=4.5:1 (WCAG 1.4.3): --text по --bg-2,
+   --text-dim по --bg. */
+
+.error-boundary {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+  overflow: auto;
+}
+
+.error-boundary__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(720px, 100%);
+  padding: 20px 24px;
+  border: 1px solid var(--border-control);
+  border-radius: 10px;
+  background: var(--bg-2);
+}
+
+.error-boundary__title {
+  margin: 0;
+  font-size: 17px;
+  color: var(--warn);
+}
+
+.error-boundary__hint {
+  margin: 0;
+  color: var(--text);
+}
+
+.error-boundary__message,
+.error-boundary__details pre {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-dim);
+  font: 11px/1.5 var(--mono);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 220px;
+  overflow: auto;
+  user-select: text;
+}
+
+.error-boundary__details summary {
+  cursor: pointer;
+  color: var(--text-dim);
+}
+
+.error-boundary__reload {
+  align-self: flex-start;
+}

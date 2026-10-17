@@ -1,0 +1,166 @@
+{
+  "mcPoint": {
+    "elementFallback": "элемент {{n}}",
+    "groupPart": "группа «{{name}}»"
+  },
+  "graph": {
+    "modes": {
+      "overview": {
+        "label": "Обзор",
+        "hint": "Игроки · богатство · основные поля"
+      },
+      "budget": {
+        "label": "Бюджеты",
+        "hint": "охраняемый / неохраняемый / ресурсы (guardedContentValue · unguardedContentValue · resourcesValue; abs · PerArea)"
+      },
+      "guard": {
+        "label": "Стражи",
+        "hint": "guardMultiplier · guardValue связей · guardMatchGroup"
+      },
+      "biome": {
+        "label": "Биомы",
+        "hint": "zoneBiome / contentBiome / metaObjectsBiome"
+      },
+      "road": {
+        "label": "Дороги",
+        "hint": "road флаги связей · маршруты zone.roads · layout · crossroads"
+      },
+      "mandatory": {
+        "label": "Контент",
+        "hint": "mandatoryContent: точки объектов · правила размещения (targetMin/Max кольцом)"
+      }
+    },
+    "metrics": {
+      "total": {
+        "label": "Σ всё",
+        "title": "Сумма: guardedContentValue + unguardedContentValue + resourcesValue"
+      },
+      "guarded": {
+        "label": "охраняемый",
+        "title": "guardedContentValue / guardedContentValuePerArea"
+      },
+      "unguarded": {
+        "label": "неохраняемый",
+        "title": "unguardedContentValue / unguardedContentValuePerArea"
+      },
+      "resources": {
+        "label": "ресурсы",
+        "title": "resourcesValue / resourcesValuePerArea"
+      }
+    },
+    "target": {
+      "abs": "абс",
+      "perArea": "на клетку"
+    },
+    "biomeLayer": "слой биома",
+    "metric": "метрика",
+    "zones_one": "{{count}} зона",
+    "zones_few": "{{count}} зоны",
+    "zones_many": "{{count}} зон",
+    "connections_one": "{{count}} связь",
+    "connections_few": "{{count}} связи",
+    "connections_many": "{{count}} связей",
+    "addZone": "+ зона",
+    "addZoneTitle": "Добавить зону в активный вариант",
+    "ctx": {
+      "createZone": "Создать зону",
+      "duplicateZone": "Дублировать зону",
+      "deleteZone": "Удалить зону",
+      "duplicateConnection": "Дублировать связь",
+      "deleteConnection": "Удалить связь"
+    },
+    "hint": "Перетащите с правого края зоны на другую — новая связь; повторный драг между той же парой — ещё одна параллельная. Backspace / Delete удаляет выбранное (с подтверждением). Клавиши 1–6 — режимы канвы. Правый клик — меню канвы / зоны / связи.",
+    "confirmDelete": {
+      "title": "Удаление с канвы",
+      "zone": "Вы собираетесь удалить зону «{{zone}}». Вы уверены?",
+      "zoneWithConnections": "Вы собираетесь удалить зону «{{zone}}» вместе с её связями ({{connections}}). Вы уверены?",
+      "connection": "Вы собираетесь удалить связь между зонами «{{from}}» и «{{to}}». Вы уверены?",
+      "multiple": "Вы собираетесь удалить {{items}}. Вы уверены?"
+    }
+  },
+  "zoneNode": {
+    "selector": {
+      "MatchMainObject": "после объекта",
+      "FromList": "из списка",
+      "MatchZone": "как зона"
+    },
+    "multi": "список",
+    "any": "любой",
+    "upTo": "до {{value}}",
+    "diplomacy": "дип {{value}}",
+    "guardMultiplierTitle": "guardMultiplier — множитель силы стражей зоны",
+    "guardWeeklyTitle": "guardWeeklyIncrement — еженедельный прирост стражей",
+    "guardCutoffTitle": "guardCutoffValue — порог силы стражей",
+    "guardRandomTitle": "guardRandomization — разброс силы стражей",
+    "diplomacyTitle": "diplomacyModifier — модификатор дипломатии",
+    "noSelector": "нет селектора",
+    "none": "нет",
+    "connector": "связующая",
+    "budgetTitle": "суммарный бюджет зоны",
+    "mcGroupsTitle": "группы mandatoryContent",
+    "mcTotalTitle": "сумма элементов групп",
+    "mcTotal": "{{n}} эл."
+  },
+  "edge": {
+    "road": "дорога",
+    "noRoad": "нет дороги"
+  },
+  "legend": {
+    "title": "Режим: {{mode}}",
+    "mode": {
+      "overview": "Обзор",
+      "budget": "Бюджеты",
+      "guard": "Стражи",
+      "biome": "Биомы",
+      "road": "Дороги",
+      "mandatory": "Обязательный контент"
+    },
+    "players": "Игроки (Spawn)",
+    "connections": "Связи",
+    "wealth": "Богатство зоны (бюджет)",
+    "budgetItems": "Слагаемые бюджета",
+    "budgetNodesHint": "На каждом узле: G · U · R в формате 12k",
+    "guardedValue": "guardedContentValue — охраняемый контент",
+    "unguardedValue": "unguardedContentValue — свободный",
+    "resourcesValue": "resourcesValue — ресурсы",
+    "budgetSwitchHint": "Переключайте абс / на клетку (PerArea) на панели канвы.",
+    "guards": "Стражи",
+    "guardMultiplier": "guardMultiplier — множитель силы стражей узла",
+    "guardSmall": "малая охрана",
+    "guardLarge": "большая охрана",
+    "guardColorHint": "Цвет связи — по guardValue: оранжевая слабая → зелёная могучая.",
+    "guardNegative": "отрицательный guardValue (−10000…−2000)",
+    "guardMatchGroup": "guardMatchGroup — синхронная стража",
+    "biomes": "Биомы",
+    "activeLayer": "Активный слой: {{layer}}",
+    "matchZoneSym": "← зона",
+    "matchZoneDesc": "MatchZone — как у зоны",
+    "matchObjectDesc": "MatchMainObject — как у объекта",
+    "diffFromSym": "≠ зона",
+    "diffFromDesc": "differentFrom — не как у зоны",
+    "anySym": "любой",
+    "anyDesc": "FromList [] — без ограничений",
+    "multiSym": "список",
+    "multiDesc": "несколько биомов из списка",
+    "roadsConn": "Дороги связей",
+    "roadTrue": "road: true — есть дорога",
+    "roadFalse": "road: false — дороги нет",
+    "roadUnset": "road — не задано",
+    "roadInZone": "Внутри зоны",
+    "stoneRoad": "Stone — каменная дорога",
+    "dirtRoad": "Dirt — грунтовая дорога",
+    "routeEnds": "концы маршрута: объект · связь · перекрёсток · контент",
+    "crossroads": "crossroadsPosition — точка схода дорог",
+    "layoutRow": "zoneLayout зоны",
+    "mcPoints": "Точки обязательного контента",
+    "mcItem": "элемент mandatoryContent (name_* / sid); наведите — правила",
+    "mcMainObject": "MainObject — кольцо вокруг объекта зоны",
+    "mcCrossroads": "Crossroads — вокруг перекрёстка (центр зоны)",
+    "mcConnection": "Connection — вокруг связи (грань к соседу)",
+    "mcSid": "Sid — вокруг другого объекта (name/sid)",
+    "mcRoad": "Road — дорога (генерируется; кольцо пунктиром)",
+    "mcRings": "Кольца правил",
+    "mcRingHint": "targetMin–targetMax — доля радиуса зоны вокруг цели; пунктир — цель не найдена/неизвестна.",
+    "mcMineHint": "Прямоугольник вокруг точки — isMine (шахта)."
+  }
+}

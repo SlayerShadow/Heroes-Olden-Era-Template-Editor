@@ -1,0 +1,52 @@
+{
+	"editor": "oe-template-editor",
+	"templateFile": "Sample Editor.rmg.json",
+	"positions": [
+		{
+			"Spawn-A": {
+				"x": 80,
+				"y": 620
+			},
+			"Spawn-B": {
+				"x": 940,
+				"y": 620
+			},
+			"Spawn-C": {
+				"x": 940,
+				"y": 60
+			},
+			"Spawn-D": {
+				"x": 80,
+				"y": 60
+			},
+			"Center": {
+				"x": 490,
+				"y": 380
+			},
+			"Treasure-1": {
+				"x": 220,
+				"y": 430
+			},
+			"Treasure-2": {
+				"x": 760,
+				"y": 430
+			},
+			"Treasure-3": {
+				"x": 760,
+				"y": 150
+			},
+			"Treasure-4": {
+				"x": 220,
+				"y": 150
+			},
+			"SuperTreasure-1": {
+				"x": 490,
+				"y": 20
+			},
+			"Connector-A": {
+				"x": 490,
+				"y": 600
+			}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "root": "",
+  "mapSize": "размер карты",
+  "variant": "V{{variant}}",
+  "zone": "V{{variant}} · {{zone}}",
+  "connection": "V{{variant}} · связь {{connection}}",
+  "guardGroup": "V{{variant}} · группа стражей {{group}}",
+  "road": "V{{variant}} · {{zone}} · дорога {{road}}",
+  "group": "{{group}}"
+}

@@ -1,0 +1,59 @@
+{
+  "locale": {
+    "selectLabel": "Язык интерфейса"
+  },
+  "fs": {
+    "fileTypeDescription": "RMG-шаблоны (можно выбрать вместе с .editor.json)",
+    "fallbackDirName": "Шаблоны",
+    "notJsonObject": "Файл — не JSON-объект",
+    "notTemplate": "Файл не похож на .rmg.json: нет name / variants[]",
+    "pickerOpenError": "Не удалось открыть окно выбора файла"
+  },
+  "app": {
+    "brand": "OE · редактор шаблонов",
+    "new": "Новый",
+    "newTitle": "Создать шаблон с нуля",
+    "openFile": "Открыть файл",
+    "openFolder": "Открыть папку",
+    "undoTitle": "Отменить (Ctrl+Z)",
+    "redoTitle": "Повторить (Ctrl+Shift+Z / Ctrl+Y)",
+    "preview": "Превью",
+    "previewTitle": "Мини-карта активного варианта → PNG-превью",
+    "save": "Сохранить",
+    "saveTitleFolder": "Сохранить в «{{folder}}» (+ PNG превью)",
+    "saveTitleNoFolder": "Папка не выбрана — скачать .rmg.json + .editor.json + PNG превью",
+    "saveTitlePickFolder": "Выбрать папку и сохранить .rmg.json + .editor.json + PNG превью",
+    "saveBlockedJson": "Сохранение заблокировано: в редакторе JSON есть неисправленная ошибка",
+    "variantLabel": "Вариант",
+    "variantOption": "V{{index}} · {{zones}} зон",
+    "variantCopyTitle": "Дублировать активный вариант",
+    "variantDeleteTitle": "Удалить активный вариант",
+    "alertNoTemplates": "В выбранной папке не найдено .rmg.json файлов.",
+    "alertSaveTemplateFail": "Не удалось записать {{base}}.rmg.json",
+    "alertSavePreviewFail": "Не удалось записать {{base}}.png — превью не сохранено",
+    "alertSavedFolder": "Файлы сохранены в папку «{{folder}}»",
+    "hintPairInFolder": "В открытой папке «{{folder}}» есть парный файл «{{sidecar}}». Откройте шаблон вместе с ним — вернутся позиции узлов, заметки и раскладка секций.",
+    "hintPairMissing": "Шаблон открыт без парного файла .editor.json: узлы встали на кольцо. Если рядом с шаблоном есть его пара — выберите при открытии оба файла.",
+    "savedToFolderTitle": "Сохранено в папку «{{folder}}»",
+    "savedToDownloadTitle": "Скачано в папку загрузок браузера",
+    "resizerLeftAria": "Ширина левой панели",
+    "resizerLeftTitle": "Потяните, чтобы изменить ширину левой панели (двойной клик — сброс)",
+    "resizerRightAria": "Ширина правой панели",
+    "resizerRightTitle": "Потяните, чтобы изменить ширину инспектора (двойной клик — сброс)",
+    "footerHint": "Канва графа зон · позиции узлов — .editor.json (sidecar). Без Chrome/Edge: открытие файлов/папки — выбором файлов, сохранение — скачиванием.",
+    "footerTabIssues": "Проблемы",
+    "footerTabCompare": "Сравнение",
+    "docs": "Документация",
+    "docsTitle": "Мануал редактора (F1)",
+    "autosaveFailed": "Не удалось сохранить резервную копию сессии: хранилище браузера недоступно или переполнено. Сохраните шаблон на диск вручную."
+  },
+  "store": {
+    "newTemplateName": "Новый шаблон",
+    "sessionRestoredAt": "Восстановлена предыдущая сессия (на момент {{time}}).",
+    "sessionRestored": "Восстановлена предыдущая сессия."
+  },
+  "toasts": {
+    "region": "Уведомления",
+    "dismiss": "Закрыть уведомление"
+  }
+}

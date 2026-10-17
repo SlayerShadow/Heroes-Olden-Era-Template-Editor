@@ -1,0 +1,56 @@
+:root {
+  --bg: #0e1116;
+  --bg-2: #141922;
+  --bg-3: #1b2230;
+  --bg-4: #232c3d;
+  --border: #242c3a;
+  /* Граница контролов (input/btn): ≥3:1 к каждому фону панелей (WCAG 1.4.11) —
+     --border для этого слишком сливается с --bg-3/--bg-4. */
+  --border-control: #6b7890;
+  --text: #cdd3dc;
+  /* ≥4.5:1 к самому светлому фону панелей (--bg-4) для мелкого текста (WCAG 1.4.3). */
+  --text-dim: #8b95a3;
+  --accent: #62a8f2;
+  --warn: #ff8f8f;
+  /* Оверлей выбранной связи на канве (ZoneEdge): кейсинг — тот же тон, что ореол
+     маршрутов RoadLayer; светлый штрих поверх акцентного «рельса»; маркеры
+     направления from (стрелка) / to (кружок). Штрих и маркеры — графические
+     объекты UI: контраст ≥3:1 к фону канвы --bg (WCAG 1.4.11). */
+  --sel-casing: #10151d;
+  --sel-stripe: #e9f2fd;
+  --dir-from: #ff8f8f;
+  --dir-to: #7ec4a8;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, 'Courier New', monospace;
+  --sans: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 var(--sans);
+  overflow: hidden;
+}
+
+/* Движение — только опционально: все переходы интерфейса схлопываются,
+   scroll-behavior сбрасывается (WCAG 2.3.3 / canon 14.8). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

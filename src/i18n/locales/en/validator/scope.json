@@ -1,0 +1,10 @@
+{
+  "root": "",
+  "mapSize": "map size",
+  "variant": "V{{variant}}",
+  "zone": "V{{variant}} · {{zone}}",
+  "connection": "V{{variant}} · connection {{connection}}",
+  "guardGroup": "V{{variant}} · guard group {{group}}",
+  "road": "V{{variant}} · {{zone}} · road {{road}}",
+  "group": "{{group}}"
+}

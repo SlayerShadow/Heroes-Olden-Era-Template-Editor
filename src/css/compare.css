@@ -1,0 +1,48 @@
+/* ------- Сравнение вариантов -------
+   Панель ComparePanel.tsx; модификаторы .issue__icon--added/--removed/--changed
+   дополняют базовый .issue__icon из validator.css (не конфликтуют: у базы нет color). */
+
+/* --- compare panel --- */
+
+.compare__body {
+  width: 640px;
+}
+
+.compare__picks {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.compare__picks label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.compare__note {
+  color: var(--text-dim);
+  padding: 6px 2px;
+}
+
+.compare__group-title {
+  color: var(--text-dim);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 6px 0 2px;
+}
+
+.issue__icon--added {
+  color: #7ecb8c;
+}
+
+.issue__icon--removed {
+  color: var(--warn);
+}
+
+.issue__icon--changed {
+  color: #ffca7a;
+}

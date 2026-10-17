@@ -1,0 +1,52 @@
+{
+  "jsonEditor": {
+    "aria": "JSON-черновик",
+    "apply": "Применить",
+    "applyTitle": "Применить изменения (Ctrl+Enter)",
+    "reset": "Сбросить",
+    "resetTitle": "Вернуть текст к текущему состоянию",
+    "dirty": "изменения не применены",
+    "errors": {
+      "syntax": "Синтаксическая ошибка JSON: {{detail}}",
+      "notObject": "Ожидается JSON-объект {…}",
+      "zoneNameMissing": "Не хватает обязательного поля name (непустая строка)",
+      "zoneNameTaken": "Имя «{{detail}}» уже занято другой зоной варианта",
+      "connEndpointsMissing": "Не хватает обязательных полей from/to (непустые строки)",
+      "connTypeMissing": "Не хватает обязательного поля connectionType",
+      "connNotFound": "Связь «{{detail}}» не найдена в активном варианте",
+      "rootNameMissing": "Не хватает обязательного поля name (непустая строка)",
+      "rootVariantsMismatch": "variants[] должен присутствовать и содержать ровно {{detail}} элемент(ов) — зоны и связи нельзя добавлять или удалять через эту секцию"
+    }
+  },
+  "fields": {
+    "badgeBroken": "известная битая ссылка (штатные)",
+    "badgeMissing": "не в каталоге",
+    "badgeOk": "в каталоге",
+    "comboNoMatches": "Нет совпадений",
+    "notSet": "не задано",
+    "requiredTitle": "Обязательное поле: присутствует у всех лэйаутов во всех 60 штатных шаблонах. Если оставить пустым, валидатор выдаст предупреждение"
+  },
+  "mcRules": {
+    "rule": "правило {{n}}",
+    "deleteTitle": "Удалить правило",
+    "typeLabel": "Тип правила",
+    "types": {
+      "Road": "дорога",
+      "MainObject": "объект зоны",
+      "Crossroads": "перекрёсток",
+      "Sid": "другой объект",
+      "Connection": "связь"
+    },
+    "argsLabel": "Аргументы",
+    "argsHint": "индекс/имя/sid/связь",
+    "targetMinLabel": "Мин. цель",
+    "targetMinHint": "targetMin — 0–0.9",
+    "targetMaxLabel": "Макс. цель",
+    "targetMaxHint": "targetMax — 0–2",
+    "weightLabel": "Вес",
+    "weightHint": "weight — 0–10",
+    "targetLabel": "Цель (точечная)",
+    "targetHint": "target — точечное расстояние (редко)",
+    "add": "правило"
+  }
+}

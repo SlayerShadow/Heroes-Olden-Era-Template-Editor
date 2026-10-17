@@ -1,0 +1,51 @@
+{
+  "conn": {
+    "sectionMain": "Connection",
+    "nameLabel": "Connection name",
+    "namePlaceholder": "Auto: From-To",
+    "nameHint": "name — referenced by roads and placementArgs",
+    "fromLabel": "Source zone",
+    "toLabel": "Target zone",
+    "connectionTypeLabel": "Connection type",
+    "connectionTypeHint": "connectionType — Direct: a straight corridor; Default: the generator picks the shape; Portal: a portal (pair of gates); Proximity: zones are simply adjacent (length sets the distance); GladiatorArena: arena entrance",
+    "connTypes": {
+      "Direct": "direct corridor (Direct)",
+      "Default": "regular connection (Default)",
+      "Portal": "portal (Portal)",
+      "Proximity": "adjacent zones (Proximity)",
+      "GladiatorArena": "arena entrance (GladiatorArena)"
+    },
+    "sectionGuard": "Guard",
+    "guardValueLabel": "Guard strength",
+    "guardValueHint": "guardValue — −10000…5,000,000; negative values (−10000…−2000) occur on secondary passages — semantics unknown, experimental",
+    "guardWeeklyLabel": "Weekly guard increment",
+    "guardWeeklyHint": "guardWeeklyIncrement — 0.05–0.25; the fraction by which the guard grows each week",
+    "guardRandomLabel": "Guard strength spread",
+    "guardRandomHint": "guardRandomization — 11 files, 0.1–0.25",
+    "guardZoneLabel": "Guard zone",
+    "guardZoneHint": "guardZone — which zone the guard is taken from (by default — in the middle)",
+    "guardGroupLabel": "Synchronized guard group",
+    "guardGroupHint": "guardMatchGroup — a named group of symmetric guards (guardValue/guardWeeklyIncrement/guardRandomization must match within the group)",
+    "guardEscapeLabel": "Guard allowed to escape",
+    "guardEscapeHint": "guardEscape — hypothesis: allow the guard to leave (guard bypass)? Always false in stock templates; behavior when true is unknown",
+    "sectionRoad": "Road and simulation",
+    "roadLabel": "Connection road",
+    "roadHint": "road — whether there is a road along the connection",
+    "simTurnSquadLabel": "Simultaneous-turn squad",
+    "simTurnSquadHint": "simTurnSquad — hypothesis: the guard counts in simultaneous turns. Always true in stock templates (48 files)",
+    "lengthLabel": "Distance",
+    "lengthHint": "length — distance for “adjacent zones” (Proximity)",
+    "sectionGate": "Portal gates",
+    "gatePlacementLabel": "Gate placement",
+    "gatePlacementHint": "gatePlacement — Center: shared gates in the center (stock); NearZone: gates in the specified zone",
+    "gatePlacements": {
+      "Center": "in the zone center (Center)",
+      "NearZone": "near the specified zone (NearZone)"
+    },
+    "gatePlacementArgsLabel": "Gate zone",
+    "gatePlacementArgsHint": "gatePlacementArgs — zone where the gates are placed (with NearZone)",
+    "sectionPortalRules": "Gate escape (portalPlacementRules)",
+    "rulesFromLabel": "portalPlacementRulesFrom[] — where the gates lead (Crossroads/MainObject)",
+    "rulesToLabel": "portalPlacementRulesTo[] — gate entry points (Crossroads/MainObject)"
+  }
+}

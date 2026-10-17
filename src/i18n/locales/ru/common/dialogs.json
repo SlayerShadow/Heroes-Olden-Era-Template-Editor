@@ -1,0 +1,61 @@
+{
+  "manual": {
+    "title": "Мануал редактора",
+    "hint": "F1 — открыть · Esc — закрыть · клик по скриншоту — на всё окно",
+    "close": "Закрыть",
+    "closeTitle": "Закрыть мануал (Esc)",
+    "navTitle": "Содержание",
+    "navToggleTitle": "Раскрыть/свернуть раздел",
+    "searchPlaceholder": "Поиск по мануалу…",
+    "searchClearTitle": "Очистить поиск",
+    "noResults": "Ничего не найдено",
+    "chapterMissingTitle": "Глава ещё не написана",
+    "imageMissing": "Скриншот появится позже",
+    "imageZoomTitle": "Открыть на всё окно",
+    "lightboxTitle": "Скриншот на всё окно",
+    "lightboxClose": "Закрыть скриншот",
+    "lightboxCloseTitle": "Закрыть (Esc или клик по фону)",
+    "empty": "Главы мануала не найдены"
+  },
+  "pick": {
+    "ariaLabel": "Выбор шаблона из папки",
+    "title": "Шаблоны папки «{{dirName}}»",
+    "searchPlaceholder": "Поиск по имени…",
+    "close": "Закрыть",
+    "empty": "Ничего не найдено.",
+    "variantsCount_one": "{{count}} вариант",
+    "variantsCount_few": "{{count}} варианта",
+    "variantsCount_many": "{{count}} вариантов",
+    "zonesCount_one": "{{count}} зона",
+    "zonesCount_few": "{{count}} зоны",
+    "zonesCount_many": "{{count}} зон",
+    "hint": "Выберите шаблон для открытия — или отмените (Esc).",
+    "cancel": "Отмена"
+  },
+  "preview": {
+    "title": "Превью · {{label}}",
+    "saved": "Сохранено «{{rootName}}/{{fileName}}»",
+    "saveFailed": "Не удалось записать «{{fileName}}»",
+    "regenerateTitle": "Перерисовать по текущему состоянию шаблона",
+    "refresh": "Обновить",
+    "close": "Закрыть",
+    "alt": "Превью шаблона",
+    "fileKey": "файл",
+    "hint": "Мини-карта активного варианта: цвет зон — игрок/богатство, линии — тип связи (как на канве).",
+    "empty": "Не удалось построить превью.",
+    "downloadTitle": "Скачать PNG в папку загрузок браузера",
+    "download": "Скачать",
+    "saveTitle": "Записать {{file}} в «{{rootName}}» рядом с шаблоном",
+    "pickFolderFirst": "Сначала выберите папку шаблона (кнопка «Открыть папку» вверху)",
+    "saveToFolder": "Сохранить в папку шаблона",
+    "downloadPng": "Скачать PNG"
+  },
+  "confirm": {
+    "delete": "Удалить",
+    "cancel": "Отмена",
+    "deleteHint": "Действие можно отменить через Ctrl+Z",
+    "discardTitle": "Несохранённые изменения",
+    "discardMessage": "Все несохранённые изменения будут утеряны! Продолжить?",
+    "discardConfirm": "Продолжить"
+  }
+}

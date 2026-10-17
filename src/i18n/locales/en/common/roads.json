@@ -1,0 +1,37 @@
+{
+  "roads": {
+    "endSuffix": "{{label}} — road end",
+    "typeLabel": "type",
+    "mainObjectLabel": "main object",
+    "mainObjectHint": "Index in the zone’s mainObjects",
+    "connectionLabel": "variant connection",
+    "connectionHint": "connection id: name or From-To",
+    "contentLabel": "content item",
+    "contentHint": "name_* in mandatory content groups",
+    "crossroadsHint": "Zone crossroads — no arguments needed.",
+    "empty": "The zone has no roads — add the first one.",
+    "deleteTitle": "Delete road",
+    "surfaceLabel": "surface",
+    "surfaceBlank": "not set",
+    "surfaceHint": "“not set” — also occurs in stock templates (~10% of roads)",
+    "endsHint": "Road end: zone object (MainObject), connection (Connection), crossroads (Crossroads) or mandatory content item (MandatoryContent).",
+    "surfaces": {
+      "Stone": "stone",
+      "Dirt": "dirt"
+    },
+    "endpoints": {
+      "MainObject": "zone object",
+      "Connection": "connection",
+      "Crossroads": "crossroads",
+      "MandatoryContent": "mandatory content item"
+    },
+    "from": "From",
+    "to": "To",
+    "add": "road"
+  },
+  "roadEnd": {
+    "mainObject": "object [{{arg}}]",
+    "connection": "connection “{{arg}}”",
+    "mandatoryContent": "content “{{arg}}”"
+  }
+}

@@ -1,0 +1,292 @@
+/* ------- Сущности графа -------
+   Узел зоны и бейдж ребра/дороги (ZoneNode.tsx, ZoneEdge.tsx, RoadLayer.tsx). */
+
+/* ------- Zone node ------- */
+
+.zone-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 7px;
+  cursor: grab;
+  user-select: none;
+}
+
+.zone-node:active {
+  cursor: grabbing;
+}
+
+.zone-node.is-selected {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 4px rgba(98, 168, 242, 0.25),
+    0 4px 14px rgba(0, 0, 0, 0.5);
+}
+
+.zone-node.is-connector {
+  border-style: dashed;
+  border-width: 2px;
+  background: #242b38;
+}
+
+.zone-node .react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg-4);
+  border: 1.5px solid var(--accent);
+  opacity: 0.85;
+}
+
+.zone-node .react-flow__handle:hover {
+  opacity: 1;
+  background: var(--accent);
+}
+
+.zone-node__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-width: 0;
+}
+
+.zone-node__name {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.zone-node__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.zone-node__mid {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zone-node__connector {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  opacity: 0.75;
+}
+
+.zone-node__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+  min-width: 0;
+}
+
+.zone-node__stats {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1px 3px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.zone-node__player {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.42);
+  line-height: 1.5;
+}
+
+.zone-node__guard {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: 700;
+  font-size: 11px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.zone-node__weekly {
+  font-size: 10px;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.zone-node__budget {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 11px;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+/* ------- Edge badge ------- */
+
+.edge-badge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
+  border-radius: 7px;
+  background: rgba(10, 13, 18, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #e8e6df;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+}
+
+.edge-badge.is-neg {
+  color: var(--warn);
+  border-color: rgba(255, 120, 120, 0.55);
+}
+
+.edge-badge.is-selected {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 1px 5px rgba(0, 0, 0, 0.45);
+}
+
+.edge-badge__warn {
+  font-weight: 800;
+}
+
+.edge-badge__length {
+  opacity: 0.7;
+}
+
+.edge-badge__ban {
+  color: var(--warn);
+}
+
+/* ------- Zone node: режимы ------- */
+
+.zone-node__mini {
+  font-size: 8.5px;
+  font-family: var(--mono);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 0, 0, 0.38);
+  border-radius: 4px;
+  padding: 0 3px;
+  white-space: nowrap;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.zone-node__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.edge-badge.is-road {
+  color: #fff;
+}
+
+/* ------- Оверлей выбранной связи (ZoneEdge.tsx) -------
+   «Рельс»: тёмный кейсинг отделяет выделение от базовой линии любого режима
+   (сплошная/пунктир, 1.4–5 px), сверху — акцентная основа и светлый штрих
+   (candy-stripe, период 16). Штрих движется от source к target — направление
+   связи дублируется движением и маркерами концов, а не только цветом
+   (WCAG 1.4.1). Видим во ВСЕХ режимах канвы, независимо от бейджа. */
+
+.edge-select {
+  fill: none;
+  /* Клики уходят interaction-пути ребра (pointer-events наследуется детьми). */
+  pointer-events: none;
+}
+
+.edge-select__casing {
+  stroke: var(--sel-casing);
+  stroke-width: 8;
+  stroke-opacity: 0.92;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.edge-select__rail,
+.edge-select__stripe {
+  stroke-width: 4;
+  stroke-dasharray: 8 8;
+  stroke-linecap: butt;
+}
+
+.edge-select__rail {
+  stroke: var(--accent);
+  animation: edge-select-march-a 1s linear infinite;
+}
+
+.edge-select__stripe {
+  stroke: var(--sel-stripe);
+  /* Базовое смещение = полпериода: при prefers-reduced-motion глобальный блок
+     (index.css) обрывает анимацию за 1ms, и узор остаётся статичной штриховкой. */
+  stroke-dashoffset: 8;
+  animation: edge-select-march-b 1s linear infinite;
+}
+
+@keyframes edge-select-march-a {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+
+@keyframes edge-select-march-b {
+  from {
+    stroke-dashoffset: 8;
+  }
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+/* Маркеры концов выбранной связи: from — стрелка наружу из зоны-источника,
+   to — кружок на зоне-приёмнике. Тёмная обводка отделяет от любого фона
+   (линии/узлы/биомы), контраст заливки к фону канвы ≥3:1 (WCAG 1.4.11). */
+.edge-select__mark {
+  stroke: var(--sel-casing);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+
+.edge-select__mark--from {
+  fill: var(--dir-from);
+}
+
+.edge-select__mark--to {
+  fill: var(--dir-to);
+}

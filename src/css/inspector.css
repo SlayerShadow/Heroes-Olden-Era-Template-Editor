@@ -1,0 +1,146 @@
+/* ------- Правая панель -------
+   Шапка, вкладки, строки «ключ — значение», сырой JSON (Inspector.tsx). */
+
+/* ------- Inspector ------- */
+
+.inspector {
+  padding: 0;
+  min-height: 100%;
+}
+
+.inspector--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  text-align: center;
+  padding: 24px;
+}
+
+.inspector__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-3);
+  position: sticky;
+  top: 0;
+  /* Без явного z-index sticky (z:auto) красится в одном слое с элементами
+     контента, которые сами создают stacking context (opacity < 1, transform —
+     напр. .react-dist__fill): позже в DOM → ПОВЕРХ головы при прокрутке.
+     z-index: 1 поднимает голову над ними (тот же приём, что .manual__nav-head). */
+  z-index: 1;
+}
+
+.inspector__kind {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--accent);
+}
+
+.inspector__title {
+  font-weight: 700;
+  font-size: 14px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inspector__diff {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 202, 122, 0.35);
+  color: #ffca7a;
+  background: rgba(255, 202, 122, 0.08);
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: none;
+}
+
+.inspector__diff--missing {
+  border-color: rgba(255, 110, 110, 0.4);
+  color: var(--warn);
+  background: rgba(255, 110, 110, 0.08);
+}
+
+.inspector__body {
+  padding: 10px 12px;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 12px;
+}
+
+.field__k {
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.field__v {
+  text-align: right;
+  font-family: var(--mono);
+  word-break: break-word;
+}
+
+.inspector__raw {
+  margin: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-3);
+}
+
+.inspector__raw summary {
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--text-dim);
+  user-select: none;
+}
+
+/* ------- Inspector tabs ------- */
+
+.inspector__tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-3);
+  /* узкий инспектор: лента вкладок скроллится вместо переполнения панели */
+  overflow-x: auto;
+}
+
+.inspector__tab {
+  flex: 1;
+  font: 600 11px/1 var(--sans);
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.inspector__tab:hover {
+  color: var(--text);
+}
+
+.inspector__tab.is-on {
+  color: var(--accent);
+  background: var(--bg-4);
+  border-color: var(--border);
+}

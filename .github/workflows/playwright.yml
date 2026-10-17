@@ -1,0 +1,50 @@
+# E2E (Playwright) — reusable-workflow: вызывается из ci.yml (job `e2e`) на push в main /
+# PR / ручной запуск. Отдельных триггеров НЕТ намеренно: иначе на каждое событие тесты
+# гонялись бы дважды (самостоятельно + в составе CI).
+#
+# Особенности:
+# - Матрица по браузерам: chromium/firefox/webkit — три параллельных job (по машине на
+#   браузер) вместо последовательного прогона всех проектов на одном раннере;
+#   fail-fast: false — падение одного браузера не отменяет остальные, видны все отчёты.
+# - Внутри job — workers: 1 (ветка CI в playwright.config.ts): стандартный раннер GitHub
+#   2-ядерный, больший параллелизм на нём даёт флаки; стабильность добирают retries: 2.
+# - Эталон export/One To One.rmg.json закоммичен (.gitignore: export/* + ре-включение)
+#   — first-template.spec.ts в CI выполняется на chromium и сверяет собранный по мануалу
+#   шаблон с эталоном; в firefox/webkit скипается по browserName-гейту (сохранение байт
+#   для сверки идёт через OPFS-шим showDirectoryPicker — только Chromium).
+# - Отчёт каждого браузера — отдельный артефакт playwright-report-<браузер> (30 дней),
+#   загружается и при падении/отмене job.
+# - Вызывающий ci.yml гейтит на этот workflow деплой Pages: pages has needs: [ci, e2e].
+
+name: Playwright Tests
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    name: E2E (${{ matrix.project }})
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24   # как в ci.yml — единая версия Node для всего CI
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps ${{ matrix.project }}
+      - name: Run Playwright tests
+        run: npx playwright test --project=${{ matrix.project }}
+      - uses: actions/upload-artifact@v7
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-${{ matrix.project }}
+          path: playwright-report/
+          retention-days: 30

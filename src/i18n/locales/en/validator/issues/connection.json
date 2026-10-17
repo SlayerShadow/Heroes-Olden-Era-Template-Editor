@@ -1,0 +1,15 @@
+{
+  "connFromMissing": "Nonexistent from zone: {{zone}}",
+  "connToMissing": "Nonexistent to zone: {{zone}}",
+  "connTypeUnknown": "Unknown connectionType “{{value}}” (expected Direct/Default/Portal/Proximity/GladiatorArena)",
+  "connNegativeGuardValue": "Negative guardValue ({{value}}) — semantics unclear, please check",
+  "portalNoGatePlacement": "Portal without gatePlacement",
+  "proximityNoLength": "Proximity without length",
+  "connGuardZoneMissing": "Nonexistent guard zone: {{zone}}",
+  "connGateZoneMissing": "Nonexistent gate zone: {{zone}}",
+  "connGatePlacementUnknown": "Unknown gatePlacement “{{value}}” (expected Center/NearZone)",
+  "connGateRuleUnknownType": "Gate rule with an unknown type “{{type}}” (expected Crossroads/MainObject)",
+  "connGateRuleTargetMin": "targetMin {{value}} outside the typical 0..0.9",
+  "connGateRuleTargetMax": "targetMax {{value}} outside the typical 0..2",
+  "connGateRuleWeight": "weight {{value}} outside the typical 1..2"
+}

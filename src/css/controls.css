@@ -1,0 +1,193 @@
+/* ------- Общие UI-атомы -------
+   Кнопки (.btn, .icon-btn), поля ввода (.input), чипы (.chip), подсказки (.hint).
+   ПОРЯДОК: подключается раньше pools.css и manual.css — там узкие классы
+   (.pb__select, .lightbox__close) перекрывают .input / .icon-btn той же специфичности. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 12px/1 var(--sans);
+  color: var(--text);
+  background: var(--bg-3);
+  border: 1px solid var(--border-control);
+  border-radius: 7px;
+  padding: 6px 9px;
+  cursor: pointer;
+  transition: border-color 120ms ease-out, background-color 120ms ease-out, color 120ms ease-out;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #08121f;
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: #79b6ff;
+  color: #08121f;
+}
+
+.btn--danger {
+  background: #d64545;
+  border-color: #d64545;
+  color: #fff;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: #e05c5c;
+  border-color: #e05c5c;
+  color: #fff;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-control);
+  background: var(--bg-4);
+  color: var(--text-dim);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 120ms ease-out, color 120ms ease-out;
+}
+
+.icon-btn:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.icon-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.chip {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-3);
+  color: var(--text);
+}
+
+.chip--warn {
+  color: var(--warn);
+  border-color: rgba(255, 143, 143, 0.4);
+}
+
+.chip--type {
+  color: #000;
+  background: #d9b45b;
+  border-color: #d9b45b;
+  font-weight: 700;
+}
+
+.chip--group {
+  color: #62a8f2;
+  border-color: rgba(98, 168, 242, 0.4);
+}
+
+/* Контрол — «колодец» на панели любого уровня: заливка темнее поверхности,
+   граница --border-control ≥3:1 к каждому фону (WCAG 1.4.11) — пустое поле
+   видно всегда, а не только когда в нём есть значение. */
+.input {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--border-control);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-family: var(--mono);
+  min-width: 0;
+  transition: border-color 120ms ease-out, box-shadow 120ms ease-out;
+}
+
+.input:hover:not(:disabled) {
+  border-color: var(--text-dim);
+}
+
+/* outline:none допустим: замена — граница accent + кольцо 1px (суммарно 2px,
+   контраст accent к заливке ≥3:1). */
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 32px;
+  line-height: 1.35;
+}
+
+select.input {
+  cursor: pointer;
+}
+
+select.input option {
+  background: var(--bg-3);
+  color: var(--text);
+}
+
+.hint {
+  color: var(--text-dim);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* ------- Чипы-переключатели (фракции / биомы) ------- */
+
+button.chip {
+  cursor: pointer;
+}
+
+button.chip:hover:not(.chip--on) {
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.chip--on {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ------- Кнопка документации (шапка) — нарочито заметная ------- */
+
+.btn--docs {
+  background: linear-gradient(180deg, #f5b942, #dd9a22);
+  border-color: #b97f16;
+  color: #241a05;
+  font-weight: 700;
+}
+
+.btn--docs:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ffc85c, #e8a52a);
+  border-color: #d0911d;
+  color: #241a05;
+}

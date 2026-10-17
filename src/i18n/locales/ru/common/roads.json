@@ -1,0 +1,37 @@
+{
+  "roads": {
+    "endSuffix": "{{label}} — конец дороги",
+    "typeLabel": "тип",
+    "mainObjectLabel": "главный объект",
+    "mainObjectHint": "Индекс в mainObjects зоны",
+    "connectionLabel": "связь варианта",
+    "connectionHint": "id связи: name или From-To",
+    "contentLabel": "элемент контента",
+    "contentHint": "name_* в группах обязательного контента",
+    "crossroadsHint": "Перекрёсток зоны — аргументы не нужны.",
+    "empty": "У зоны нет дорог — добавьте первую.",
+    "deleteTitle": "Удалить дорогу",
+    "surfaceLabel": "поверхность",
+    "surfaceBlank": "не задано",
+    "surfaceHint": "«не задано» — встречается и в штатных шаблонах (~10% дорог)",
+    "endsHint": "Конец дороги: объект зоны (MainObject), связь (Connection), перекрёсток (Crossroads) или элемент обязательного контента (MandatoryContent).",
+    "surfaces": {
+      "Stone": "каменная",
+      "Dirt": "грунтовая"
+    },
+    "endpoints": {
+      "MainObject": "объект зоны",
+      "Connection": "связь",
+      "Crossroads": "перекрёсток",
+      "MandatoryContent": "элемент обязательного контента"
+    },
+    "from": "Откуда",
+    "to": "Куда",
+    "add": "дорогу"
+  },
+  "roadEnd": {
+    "mainObject": "объект [{{arg}}]",
+    "connection": "связь «{{arg}}»",
+    "mandatoryContent": "контент «{{arg}}»"
+  }
+}

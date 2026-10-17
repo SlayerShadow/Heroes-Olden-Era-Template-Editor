@@ -1,0 +1,11 @@
+{
+  "roadTypeUnknown": "Неизвестный тип дороги: {{type}}",
+  "roadSelfLoop": "Дорога идёт из одной и той же точки в неё же",
+  "roadEndNotObject": "Некорректный селектор конца дороги",
+  "roadEndMainObjectNoIndex": "MainObject-конец без корректного индекса (args[0])",
+  "roadEndMainObjectOutOfRange": "MainObject[{{index}}] вне диапазона mainObjects (0..{{max}})",
+  "roadEndConnectionMissing": "Связь «{{connection}}» не найдена в варианте",
+  "roadEndMcMissing": "Объект «{{object}}» не найден в группах обязательного контента",
+  "roadEndCrossroadsExtraArgs": "Crossroads-конец с лишними аргументами",
+  "roadEndTypeUnknown": "Неизвестный тип конца дороги: «{{type}}»"
+}

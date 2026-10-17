@@ -1,0 +1,15 @@
+{
+  "connFromMissing": "Несуществующая зона from: {{zone}}",
+  "connToMissing": "Несуществующая зона to: {{zone}}",
+  "connTypeUnknown": "Неизвестный connectionType «{{value}}» (ожидается Direct/Default/Portal/Proximity/GladiatorArena)",
+  "connNegativeGuardValue": "Отрицательный guardValue ({{value}}) — семантика неясна, проверьте",
+  "portalNoGatePlacement": "Portal без gatePlacement",
+  "proximityNoLength": "Proximity без length",
+  "connGuardZoneMissing": "Несуществующая зона стража: {{zone}}",
+  "connGateZoneMissing": "Несуществующая зона врат: {{zone}}",
+  "connGatePlacementUnknown": "Неизвестный gatePlacement «{{value}}» (ожидается Center/NearZone)",
+  "connGateRuleUnknownType": "Правило врат с незнакомым type «{{type}}» (ожидается Crossroads/MainObject)",
+  "connGateRuleTargetMin": "targetMin {{value}} вне типового 0..0.9",
+  "connGateRuleTargetMax": "targetMax {{value}} вне типового 0..2",
+  "connGateRuleWeight": "weight {{value}} вне типового 1..2"
+}

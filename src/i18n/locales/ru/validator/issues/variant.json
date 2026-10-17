@@ -1,0 +1,21 @@
+{
+  "noZones": "Нет ни одной зоны",
+  "zoneDupNames": "Дубли имён зон: {{names}}",
+  "spawnAlreadyUsed": "{{spawn}} уже задан в зоне {{zone}}",
+  "connDupAutoNames": "Совпадающие авто-имена связей (From–To без суффикса): {{names}}",
+  "guardGroupSingle": "Группа «{{group}}» из одной связи — синхронизировать некого",
+  "guardGroupFieldMismatch": "В группе «{{group}}» {{field}} различаются ({{values}}) — стражи не будут симметричны",
+  "orientationModeUnknown": "Неизвестный mode «{{mode}}»",
+  "orientationAngleMinMax": "baseAngleMin ({{min}}) больше baseAngleMax ({{max}})",
+  "orientationBaseAngleMinRange": "baseAngleMin {{value}} вне типового 0–360",
+  "orientationBaseAngleMaxRange": "baseAngleMax {{value}} вне типового 0–360",
+  "orientationRandomAmplitudeRange": "randomAngleAmplitude {{value}} вне типового 0–360",
+  "orientationRandomStepRange": "randomAngleStep {{value}} вне типового 0–180",
+  "orientationZeroAngleZoneMissing": "zeroAngleZone «{{zone}}» не является зоной варианта",
+  "borderCornerRadiusRange": "cornerRadius {{value}} вне типового 0–0.8",
+  "borderObstaclesWidthRange": "obstaclesWidth {{value}} вне типового 2–6",
+  "borderWaterWidthRange": "waterWidth {{value}} вне типового 0–6",
+  "borderWaterTypeNonstandard": "waterType «{{value}}» — в штатных всегда «water grass»",
+  "borderNoiseAmpRange": "amp {{value}} вне типового 0.5–2",
+  "borderNoiseFreqRange": "freq {{value}} вне типового 1–12"
+}

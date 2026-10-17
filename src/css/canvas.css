@@ -1,0 +1,196 @@
+/* ------- Канва -------
+   Инфо-панели react-flow, панель режимов отображения, слой mandatoryContent
+   (ZoneGraph.tsx, MandatoryLayer.tsx). */
+
+.rf-panel {
+  margin: 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+  background: rgba(20, 25, 34, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  pointer-events: none;
+}
+
+/* Кнопки внутри инфо-панелей канвы (например, «+ зона») должны быть кликабельны,
+   несмотря на pointer-events: none самой панели. */
+.rf-panel .btn {
+  pointer-events: auto;
+}
+
+.react-flow__panel.rf-hint {
+  margin-left: 45px;
+  /* Резерв под миникарту (bottom-right, 200×150 по умолчанию): на узком окне/канве
+     подсказка переносится в несколько строк и не наезжает на миникарту.
+     265px = 45px отступ слева + 200px миникарта + 20px зазор и поля. */
+  max-width: calc(100% - 265px);
+}
+
+/* ------- View modes (канва) ------- */
+
+/* Канва — контейнер размеров: раскладка плашек реагирует на ширину канвы,
+   а не окна (боковые панели растягиваются ресайзерами независимо от окна). */
+.app__canvas {
+  container-type: inline-size;
+}
+
+/* Узкая канва: центрированная панель режимов накрывает счётчик зон
+   (верхняя левая плашка). Опускаем её под счётчик во всю ширину канвы;
+   порог 920px — худший случай центрировки (широкий счётчик + подряд бюджетов). */
+@container (max-width: 920px) {
+  .react-flow__panel.top.center.vm-bar {
+    top: 43px; /* 15px margin панели + 43px = сразу под верхней левой плашкой */
+    left: 0;
+    transform: none;
+    align-items: flex-start;
+    max-width: calc(100% - 30px);
+  }
+
+  .vm-modes,
+  .vm-sub {
+    flex-wrap: wrap;
+  }
+}
+
+.vm-bar {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.vm-modes {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 9px;
+  background: rgba(14, 17, 22, 0.78);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+}
+
+.vm-mode {
+  font: 600 11px/1 var(--sans);
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.vm-mode:hover {
+  color: var(--text);
+}
+
+.vm-mode.is-on {
+  color: var(--accent);
+  background: var(--bg-4);
+  border-color: var(--border);
+}
+
+.vm-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 8px;
+  background: rgba(14, 17, 22, 0.72);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(3px);
+}
+
+.vm-sub__label {
+  font-size: 10px;
+  color: var(--text-dim);
+  padding: 0 6px;
+  white-space: nowrap;
+}
+
+.vm-sub__sep {
+  width: 1px;
+  height: 14px;
+  margin: 0 5px;
+  background: var(--border);
+}
+
+.vm-chip {
+  font: 600 10.5px/1 var(--mono);
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 4px 7px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.vm-chip:hover {
+  color: var(--text);
+}
+
+.vm-chip.is-on {
+  color: #fff;
+  background: var(--bg-3);
+  border-color: var(--accent);
+}
+
+/* ------- Контекстное меню (ПКМ по канве / зоне / связи) ------- */
+
+.ctx-menu {
+  position: fixed;
+  z-index: 1000;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px;
+  background: rgba(14, 17, 22, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.ctx-menu__item {
+  font: 500 12px/1 var(--sans);
+  text-align: left;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ctx-menu__item:hover {
+  background: var(--bg-3);
+}
+
+.ctx-menu__item--danger {
+  color: #e08a8a;
+}
+
+.ctx-menu__item--danger:hover {
+  background: rgba(214, 69, 69, 0.18);
+  color: #f0a5a5;
+}
+
+/* ------- Слой mandatoryContent (режим «Контент») ------- */
+
+.mc-layer text {
+  user-select: none;
+}
+
+.mc-layer .mc-dot {
+  cursor: help;
+}
+
+.mc-layer .mc-label {
+  cursor: help;
+}

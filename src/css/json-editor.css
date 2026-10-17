@@ -1,0 +1,82 @@
+/* ------- Умный JSON-редактор -------
+   Компонент components/editors/JsonEditor.tsx; раскладка .json-edit-full
+   внутри сетки .editor__grid из editors.css. */
+
+/* ------- Smart JSON editor ------- */
+
+.json-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid var(--border);
+}
+
+.json-edit__ta {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 120px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: #b9c2d0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  tab-size: 2;
+}
+
+.json-edit__ta:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.json-edit__ta.is-dirty {
+  border-color: var(--text-dim);
+}
+
+.json-edit__ta.is-invalid,
+.json-edit__ta.is-invalid:focus {
+  border-color: var(--warn);
+  background: rgba(255, 143, 143, 0.06);
+}
+
+.json-edit__err {
+  color: var(--warn);
+  font-size: 11px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.json-edit__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.json-edit__status {
+  margin-left: auto;
+  font-size: 10.5px;
+  color: var(--text-dim);
+}
+
+.json-edit__hint {
+  font-size: 10.5px;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
+
+/* JSON-секция внутри .editor__grid (двухколоночный) — на всю ширину. */
+.editor__grid > .json-edit-full {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.editor__grid > .json-edit-full .json-edit {
+  border-top: none;
+  padding: 0;
+}

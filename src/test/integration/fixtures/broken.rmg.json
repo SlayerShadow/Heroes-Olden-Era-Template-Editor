@@ -1,0 +1,4 @@
+{
+  "notATemplate": true,
+  "comment": "Валидный JSON, но не шаблон: нет name/variants — parseTemplate бросает fs.notTemplate. Фикстура негативного сценария открытия (src/test/integration/open-template.spec.ts)."
+}

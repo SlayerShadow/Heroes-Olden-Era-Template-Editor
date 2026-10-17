@@ -1,0 +1,11 @@
+{
+  "roadTypeUnknown": "Unknown road type: {{type}}",
+  "roadSelfLoop": "The road goes from a point back to the same point",
+  "roadEndNotObject": "Invalid road end selector",
+  "roadEndMainObjectNoIndex": "MainObject end without a valid index (args[0])",
+  "roadEndMainObjectOutOfRange": "MainObject[{{index}}] outside the mainObjects range (0..{{max}})",
+  "roadEndConnectionMissing": "Connection “{{connection}}” not found in the variant",
+  "roadEndMcMissing": "Object “{{object}}” not found in the mandatory content groups",
+  "roadEndCrossroadsExtraArgs": "Crossroads end with extra arguments",
+  "roadEndTypeUnknown": "Unknown road end type: “{{type}}”"
+}

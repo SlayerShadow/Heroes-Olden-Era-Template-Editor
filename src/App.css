@@ -1,0 +1,21 @@
+/* Единая точка подключения стилей редактора (импортируется из App.tsx).
+   Разбито по доменам на src/css/*; классы глобальные, поэтому ПОРЯДОК @import —
+   часть контракта:
+   - controls.css первым: его атомы (.input, .icon-btn) перекрываются узкими классами
+     pools.css (.pb__select поверх .input) и manual.css (.lightbox__close поверх .icon-btn);
+   - остальные файлы перекрывают только собственные классы и друг от друга не зависят. */
+@import './css/controls.css';
+@import './css/app-shell.css';
+@import './css/sidebar.css';
+@import './css/canvas.css';
+@import './css/graph.css';
+@import './css/inspector.css';
+@import './css/editors.css';
+@import './css/json-editor.css';
+@import './css/rootpanels.css';
+@import './css/validator.css';
+@import './css/compare.css';
+@import './css/pools.css';
+@import './css/dialogs.css';
+@import './css/toasts.css';
+@import './css/manual.css';

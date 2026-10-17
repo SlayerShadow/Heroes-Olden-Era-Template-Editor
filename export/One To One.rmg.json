@@ -1,0 +1,412 @@
+{
+	"name": "One To One",
+	"gameMode": "Classic",
+	"description": "",
+	"displayWinCondition": "win_condition_1",
+	"sizeX": 128,
+	"sizeZ": 128,
+	"valueOverrides": [],
+	"gameRules": {
+		"heroCountMin": 1,
+		"heroCountMax": 3,
+		"heroCountIncrement": 1,
+		"heroHireBan": false,
+		"encounterHoles": false,
+		"winConditions": {
+			"classic": true
+		}
+	},
+	"zoneLayouts": [
+		{
+			"name": "zone_layout_default",
+			"obstaclesFill": 0.5,
+			"lakesFill": 0.3,
+			"guardedEncounterResourceFractions": {
+				"countBounds": [],
+				"fractions": [
+					0.7
+				]
+			},
+			"ambientPickupDistribution": {
+				"repulsion": 1,
+				"noise": 0.35,
+				"roadAttraction": 0,
+				"obstacleAttraction": 0.02,
+				"groupSizeWeights": [
+					20,
+					2,
+					1
+				]
+			},
+			"obstaclesFillVoid": 0.5,
+			"elevationClusterScale": 0.5,
+			"roadClusterArea": 100
+		}
+	],
+	"mandatoryContent": [
+		{
+			"name": "group_spawn",
+			"content": [
+				{
+					"sid": "random_item_legendary",
+					"isGuarded": true,
+					"isMine": false,
+					"rules": [
+						{
+							"type": "Road",
+							"args": [],
+							"targetMin": 0,
+							"targetMax": 0.4,
+							"weight": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "group_center",
+			"content": [
+				{
+					"sid": "random_item_legendary",
+					"isGuarded": true,
+					"isMine": false,
+					"rules": [
+						{
+							"type": "Road",
+							"args": [],
+							"targetMin": 0,
+							"targetMax": 0.4,
+							"weight": 1
+						}
+					]
+				}
+			]
+		}
+	],
+	"contentCountLimits": [
+		{
+			"name": "content_limits_spawn",
+			"limits": [
+				{
+					"sid": "pandora_box",
+					"variant": -1,
+					"maxCount": 1
+				}
+			]
+		},
+		{
+			"name": "content_limits_center",
+			"limits": [
+				{
+					"sid": "pandora_box",
+					"variant": -1,
+					"maxCount": 1
+				}
+			]
+		}
+	],
+	"contentPools": [],
+	"contentLists": [],
+	"variants": [
+		{
+			"zones": [
+				{
+					"name": "Spawn-1",
+					"size": 0.9,
+					"layout": "zone_layout_default",
+					"mainObjects": [
+						{
+							"type": "Spawn",
+							"spawn": "Player1",
+							"placement": "Center"
+						}
+					],
+					"zoneBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"contentBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"metaObjectsBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"guardReactionDistribution": [
+						1,
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					"guardedContentValuePerArea": 16000,
+					"unguardedContentValuePerArea": 2600,
+					"resourcesValuePerArea": 500,
+					"guardedContentPool": [
+						"classic_template_pool_random_t2_item",
+						"classic_template_pool_random_t2_hire",
+						"classic_template_pool_random_t2_unit_bank"
+					],
+					"unguardedContentPool": [
+						"classic_template_pool_random_unguarded_t2_base"
+					],
+					"resourcesContentPool": [
+						"content_pool_general_resources_start_zone_medium"
+					],
+					"guardMultiplier": 1.2,
+					"guardRandomization": 0.05,
+					"guardWeeklyIncrement": 0.1,
+					"roads": [
+						{
+							"type": "Stone",
+							"from": {
+								"type": "MainObject",
+								"args": [
+									"0"
+								]
+							},
+							"to": {
+								"type": "Connection",
+								"args": [
+									"Spawn-1-Center"
+								]
+							}
+						}
+					],
+					"mandatoryContent": [
+						"group_spawn"
+					],
+					"contentCountLimits": [
+						"content_limits_spawn"
+					]
+				},
+				{
+					"name": "Center",
+					"size": 1.5,
+					"layout": "zone_layout_default",
+					"mainObjects": [
+						{
+							"type": "City",
+							"placement": "Center",
+							"guardChance": 1,
+							"guardValue": 20000,
+							"faction": {
+								"type": "FromList",
+								"args": [
+									"human",
+									"demon",
+									"dungeon"
+								]
+							},
+							"buildingsConstructionSid": "rich_buildings_construction",
+							"guardWeeklyIncrement": 0.2
+						},
+						{
+							"type": "AbandonedOutpost",
+							"placement": "Uniform",
+							"guardChance": 1,
+							"guardValue": 12000,
+							"guardWeeklyIncrement": 0.1
+						}
+					],
+					"zoneBiome": {
+						"type": "FromList",
+						"args": [
+							"Sand"
+						]
+					},
+					"contentBiome": {
+						"type": "FromList",
+						"args": [
+							"Sand"
+						]
+					},
+					"metaObjectsBiome": {
+						"type": "FromList",
+						"args": [
+							"Sand"
+						]
+					},
+					"guardReactionDistribution": [
+						1,
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					"guardedContentPool": [
+						"classic_template_pool_random_t4_item",
+						"classic_template_pool_random_t5_item"
+					],
+					"unguardedContentPool": [
+						"classic_template_pool_random_unguarded_t4_base"
+					],
+					"resourcesContentPool": [
+						"content_pool_general_resources_treasure_zone_rich"
+					],
+					"guardMultiplier": 2.1,
+					"guardRandomization": 0.05,
+					"guardWeeklyIncrement": 0.15,
+					"guardedContentValue": 120000,
+					"unguardedContentValue": 20000,
+					"resourcesValue": 12000,
+					"roads": [
+						{
+							"type": "Stone",
+							"from": {
+								"type": "MainObject",
+								"args": [
+									"0"
+								]
+							},
+							"to": {
+								"type": "Connection",
+								"args": [
+									"Spawn-1-Center"
+								]
+							}
+						}
+					],
+					"mandatoryContent": [
+						"group_center"
+					],
+					"contentCountLimits": [
+						"content_limits_center"
+					]
+				},
+				{
+					"name": "Spawn-2",
+					"size": 0.9,
+					"layout": "zone_layout_default",
+					"mainObjects": [
+						{
+							"type": "Spawn",
+							"spawn": "Player2",
+							"placement": "Center"
+						}
+					],
+					"zoneBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"contentBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"metaObjectsBiome": {
+						"type": "MatchMainObject",
+						"args": [
+							"0"
+						]
+					},
+					"guardReactionDistribution": [
+						1,
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					"guardedContentValuePerArea": 16000,
+					"unguardedContentValuePerArea": 2600,
+					"resourcesValuePerArea": 500,
+					"guardedContentPool": [
+						"classic_template_pool_random_t2_item",
+						"classic_template_pool_random_t2_hire",
+						"classic_template_pool_random_t2_unit_bank"
+					],
+					"unguardedContentPool": [
+						"classic_template_pool_random_unguarded_t2_base"
+					],
+					"resourcesContentPool": [
+						"content_pool_general_resources_start_zone_medium"
+					],
+					"guardMultiplier": 1.2,
+					"guardRandomization": 0.05,
+					"guardWeeklyIncrement": 0.1,
+					"roads": [
+						{
+							"type": "Stone",
+							"from": {
+								"type": "MainObject",
+								"args": [
+									"0"
+								]
+							},
+							"to": {
+								"type": "Connection",
+								"args": [
+									"Spawn-2-Center"
+								]
+							}
+						}
+					],
+					"mandatoryContent": [
+						"group_spawn"
+					],
+					"contentCountLimits": [
+						"content_limits_spawn"
+					]
+				}
+			],
+			"connections": [
+				{
+					"connectionType": "Direct",
+					"from": "Spawn-2",
+					"to": "Center",
+					"road": true,
+					"guardValue": 30000,
+					"guardWeeklyIncrement": 0.15,
+					"guardZone": "Center",
+					"guardMatchGroup": "spawn_main_guard",
+					"name": "Spawn-2-Center"
+				},
+				{
+					"connectionType": "Direct",
+					"from": "Spawn-1",
+					"to": "Center",
+					"road": true,
+					"guardValue": 30000,
+					"guardWeeklyIncrement": 0.15,
+					"guardZone": "Center",
+					"guardMatchGroup": "spawn_main_guard"
+				},
+				{
+					"connectionType": "Direct",
+					"from": "Spawn-1",
+					"to": "Center",
+					"road": true,
+					"guardValue": 12000,
+					"guardWeeklyIncrement": 0.1,
+					"guardZone": "Center",
+					"guardMatchGroup": "spawn_side_guard",
+					"name": "Spawn-1-Center-1"
+				},
+				{
+					"connectionType": "Direct",
+					"from": "Spawn-2",
+					"to": "Center",
+					"road": true,
+					"guardValue": 12000,
+					"guardWeeklyIncrement": 0.1,
+					"guardZone": "Center",
+					"guardMatchGroup": "spawn_side_guard",
+					"name": "Spawn-2-Center-1"
+				}
+			]
+		}
+	]
+}

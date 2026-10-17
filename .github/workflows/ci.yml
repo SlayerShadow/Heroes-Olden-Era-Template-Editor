@@ -1,0 +1,81 @@
+# CI: линтер → тесты → typecheck-сборка → release-дистрибутив + E2E (Playwright);
+# из main — публикация на GitHub Pages, только если всё зелёное.
+#
+# Особенности:
+# - `npm run release` даёт один dist/heroes-oe-template-editor.html; для Pages он же
+#   кладётся копией в index.html — Pages отдаёт по корню сайта только index.html.
+# - E2E (Playwright) — job `e2e`: вызов reusable-workflow playwright.yml (матрица
+#   chromium/firefox/webkit — три параллельных job, по машине на браузер).
+# - Деплой только из main (push или ручной запуск) И только когда зелёные оба job:
+#   `pages` has `needs: [ci, e2e]`; в PR — все проверки без публикации.
+# - Шаги configure-pages/upload-pages-artifact в ci gated на main: в PR артефакт
+#   github-pages не нужен (deploy всё равно только из main) и Pages-API не краснит ci.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: lint + test + build + release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build    # это typecheck: noUnusedLocals/noUnusedParameters и т.п.
+      - run: npm run release  # single-file дистрибутив
+      - name: Pages-корень (index.html)
+        run: cp dist/heroes-oe-template-editor.html dist/index.html
+      - name: configure-pages (только main)
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/configure-pages@v6
+        with:
+          enablement: true
+      - name: upload-pages-artifact (только main)
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+      - uses: actions/upload-artifact@v7
+        with:
+          name: heroes-oe-template-editor
+          path: dist/heroes-oe-template-editor.html
+          if-no-files-found: error
+
+  e2e:
+    name: E2E (Playwright)
+    uses: ./.github/workflows/playwright.yml   # reusable-workflow, матрица по браузерам
+
+  pages:
+    name: deploy to GitHub Pages
+    needs: [ci, e2e]
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: true
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,21 @@
+{
+  "noZones": "No zones at all",
+  "zoneDupNames": "Duplicate zone names: {{names}}",
+  "spawnAlreadyUsed": "{{spawn}} is already set in zone {{zone}}",
+  "connDupAutoNames": "Colliding connection auto-names (From–To without a suffix): {{names}}",
+  "guardGroupSingle": "Group “{{group}}” has a single connection — nothing to synchronize",
+  "guardGroupFieldMismatch": "In group “{{group}}”, {{field}} differ ({{values}}) — the guards will not be symmetric",
+  "orientationModeUnknown": "Unknown mode “{{mode}}”",
+  "orientationAngleMinMax": "baseAngleMin ({{min}}) is greater than baseAngleMax ({{max}})",
+  "orientationBaseAngleMinRange": "baseAngleMin {{value}} outside the typical 0–360",
+  "orientationBaseAngleMaxRange": "baseAngleMax {{value}} outside the typical 0–360",
+  "orientationRandomAmplitudeRange": "randomAngleAmplitude {{value}} outside the typical 0–360",
+  "orientationRandomStepRange": "randomAngleStep {{value}} outside the typical 0–180",
+  "orientationZeroAngleZoneMissing": "zeroAngleZone “{{zone}}” is not a zone of the variant",
+  "borderCornerRadiusRange": "cornerRadius {{value}} outside the typical 0–0.8",
+  "borderObstaclesWidthRange": "obstaclesWidth {{value}} outside the typical 2–6",
+  "borderWaterWidthRange": "waterWidth {{value}} outside the typical 0–6",
+  "borderWaterTypeNonstandard": "waterType “{{value}}” — always “water grass” in stock templates",
+  "borderNoiseAmpRange": "amp {{value}} outside the typical 0.5–2",
+  "borderNoiseFreqRange": "freq {{value}} outside the typical 1–12"
+}

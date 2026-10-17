@@ -1,0 +1,331 @@
+/* ------- Левая панель -------
+   Вкладки «Дерево / Легенда», дерево шаблона, легенда (Sidebar.tsx, TemplateTree.tsx, Legend.tsx). */
+
+/* ------- Legend ------- */
+
+.legend {
+  padding: 12px;
+}
+
+.legend__title {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+}
+
+.legend__section {
+  margin: 0 0 14px;
+}
+
+.legend__section h4 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.legend__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.legend__swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.legend__swatch i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legend__conn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  margin: 3px 0;
+}
+
+.legend__ban {
+  color: var(--warn);
+}
+
+.legend__guard {
+  color: #62a8f2;
+}
+
+.legend__grad {
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, hsl(222 30% 34%), hsl(160 42% 45%), hsl(96 52% 44%), hsl(54 72% 52%));
+}
+
+.legend__grad-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+/* ------- Legend: режимы ------- */
+
+.legend__hint {
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--text-dim);
+  margin: 4px 0;
+}
+
+.legend__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  margin: 3px 0;
+  line-height: 1.3;
+}
+
+.legend__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend__mono {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+/* ------- Sidebar tabs (Дерево / Легенда) ------- */
+
+.sb-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-3);
+  flex-shrink: 0;
+}
+
+.sb-tab {
+  flex: 1;
+  font: 600 11px/1 var(--sans);
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sb-tab:hover {
+  color: var(--text);
+}
+
+.sb-tab.is-on {
+  color: var(--accent);
+  background: var(--bg-4);
+  border-color: var(--border);
+}
+
+.sb-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* ------- Template tree ------- */
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.tree__head {
+  padding: 7px 10px 3px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.tree__search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px 6px;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.tree__scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 2px 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  text-align: left;
+  font: 600 12px/1 var(--sans);
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 5px 7px;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.tree-row:hover {
+  background: var(--bg-3);
+  border-color: var(--border);
+}
+
+.tree-row--root {
+  color: var(--accent);
+  font-size: 12.5px;
+  margin-bottom: 4px;
+}
+
+.tree-row--root .tree-row__name {
+  color: var(--accent);
+}
+
+.tree-row--variant {
+  font-weight: 700;
+}
+
+.tree-variant.is-active > .tree-row--variant {
+  color: var(--accent);
+  background: var(--bg-3);
+  border-color: var(--border);
+}
+
+.tree-row.is-selected {
+  background: var(--bg-4);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.tree-row__icon {
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.tree-row__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.tree-row--root .tree-row__name,
+.tree-row--variant .tree-row__name {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 12px;
+  flex: 1;
+}
+
+.tree-row__meta {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 10px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 55%;
+  text-align: right;
+}
+
+.tree-row__chev {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1;
+  padding: 2px 3px;
+}
+
+.tree-row__chev:hover {
+  color: var(--text);
+}
+
+.tree__branch {
+  margin-left: 9px;
+  border-left: 1px solid var(--border);
+  padding-left: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tree-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tree-group__label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 6px 3px 2px;
+}
+
+.tree-group__empty {
+  font-size: 10.5px;
+  color: var(--text-dim);
+  padding: 2px 4px 4px 8px;
+}
+
+.tree-row--zone .tree-row__name {
+  color: #d8dee7;
+}
+
+.tree-row--conn .tree-row__name {
+  color: #8fa3bb;
+}
+
+.tree__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
